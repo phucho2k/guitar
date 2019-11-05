@@ -1,0 +1,28 @@
+
+<div class="container" >
+<header>
+  My Guitar Shop
+</header>
+
+<aside>
+
+<span>Link</span><br>
+<a [routerLink]="['/cart']">View Cart</a><br>
+<a href="#">Login/Resignter</a><br>
+<a [routerLink]="['']">Home</a><br>
+
+<!-- Categories -->
+<span>Categories</span><br>
+<div *ngFor = 'let cate of categories' class="categories">
+  <a [routerLink]="['details',cate.id]">{{cate.catename}}</a>
+</div>
+<span>Temp Link</span><br>
+<a href="#">Admin</a>
+</aside>
+<article>
+  <router-outlet></router-outlet>
+</article>
+<footer>
+<span>&copy; 2010 my guitar shop</span>
+</footer>
+</div>

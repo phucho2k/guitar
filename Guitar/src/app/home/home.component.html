@@ -1,0 +1,20 @@
+<p>We have a great selection musical instrument includings guitar, basses, and drums. And we're constantly 
+    adding more to give you the best selection possible!
+</p>
+<div *ngFor = 'let p of products '>
+<div class="card mb-3" style="max-width: 840px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="/assets/images/guitar.jpg" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <span><a [routerLink]="['/products',p.id]">{{p.productname}}</a></span><br>
+              <strong>Your price: </strong>{{p.price|currency}}<br>   
+              <p>{{p.description}}</p>
+
+            </div>
+          </div>
+        </div>
+</div>
+</div>

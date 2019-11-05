@@ -1,0 +1,24 @@
+<h3>Cart</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Item</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; let index = index">
+        <th scope="row">{{ item.productname }}</th>
+        <td>{{ item.price | currency }}</td>
+        <td><input type="number" style="width: 70px" [(ngModel)]="quantity[index]" [ngModelOptions]="{standalone: true}" ></td> 
+        <td>{{total(index) | currency}}</td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold" colspan="3">SubTotal:</td>
+        <td>{{subt() | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button><a [routerLink]="['']" (click)="removeAll()">Clear</a></button>
